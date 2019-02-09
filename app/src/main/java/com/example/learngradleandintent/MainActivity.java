@@ -1,6 +1,7 @@
 package com.example.learngradleandintent;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = MainActivity.class.getSimpleName();
+    private final int RC_CAMERA = 10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +28,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent cameraIntent = new Intent(MainActivity.this, CameraActivity.class);
                 cameraIntent.putExtra("name", "Dhairya");
                 cameraIntent.putExtra("rollnumber", 45);
-                startActivity(cameraIntent);
+                startActivityForResult(cameraIntent, RC_CAMERA);
             }
         });
 
         Bundle b = new Bundle();
         b.putInt("rollnumber", 49);
         b.putString("username", "Gourav Manchanda");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+            Log.d(TAG, "onActivityResult: "+ data.getExtras().getString("result"));
 
     }
 

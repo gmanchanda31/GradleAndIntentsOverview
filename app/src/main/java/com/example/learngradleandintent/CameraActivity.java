@@ -1,6 +1,7 @@
 package com.example.learngradleandintent;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,5 +24,11 @@ public class CameraActivity extends AppCompatActivity {
         int rollnumber = bundle.getInt("rollnumber");
 
         Log.d(TAG, name + "  " + rollnumber);
+
+        String sumOfStrings = name + " " + rollnumber;
+
+        Intent sendingDataBack = new Intent();
+        sendingDataBack.putExtra("result", sumOfStrings);
+        setResult(RESULT_OK, sendingDataBack);
     }
 }
