@@ -8,7 +8,6 @@ import android.util.Log;
 
 public class CameraActivity extends AppCompatActivity {
 
-
     private static final String TAG = "CameraActivity";
 
     @Override
@@ -18,7 +17,18 @@ public class CameraActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        Bundle bundle = intent.getExtras();
+        if (getIntent().getExtras().getString("calledFrom").equals("Main")) {
+
+        } else if (getIntent().getExtras().getString("calledFrom").equals("Login")) {
+
+        } else {
+
+        }
+
+        Bundle superbundle = intent.getExtras();
+
+        Bundle bundle = superbundle.getBundle("bundle");
+        Bundle bundle1 = superbundle.getBundle("bundle1");
 
         String name = bundle.getString("name");
         int rollnumber = bundle.getInt("rollnumber");
