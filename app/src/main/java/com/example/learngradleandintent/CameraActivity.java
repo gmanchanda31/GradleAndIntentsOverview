@@ -17,28 +17,28 @@ public class CameraActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if (getIntent().getExtras().getString("calledFrom").equals("Main")) {
-
-        } else if (getIntent().getExtras().getString("calledFrom").equals("Login")) {
-
-        } else {
-
-        }
-
-        Bundle superbundle = intent.getExtras();
-
-        Bundle bundle = superbundle.getBundle("bundle");
-        Bundle bundle1 = superbundle.getBundle("bundle1");
-
-        String name = bundle.getString("name");
-        int rollnumber = bundle.getInt("rollnumber");
-
-        Log.d(TAG, name + "  " + rollnumber);
-
-        String sumOfStrings = name + " " + rollnumber;
-
-        Intent sendingDataBack = new Intent();
-        sendingDataBack.putExtra("result", sumOfStrings);
-        setResult(RESULT_OK, sendingDataBack);
+//        if (getIntent().getExtras().getString("calledFrom").equals("Main")) {
+//
+//        } else if (getIntent().getExtras().getString("calledFrom").equals("Login")) {
+//
+//        } else {
+//
+//        }
+//
+//        Bundle superbundle = intent.getExtras();
+//
+//        Bundle bundle = superbundle.getBundle("bundle");
+//        Bundle bundle1 = superbundle.getBundle("bundle1");
+//
+//        String name = bundle.getString("name");
+//        int rollnumber = bundle.getInt("rollnumber");
+//
+//        Log.d(TAG, name + "  " + rollnumber);
+//
+//        String sumOfStrings = name + " " + rollnumber;
+//
+//        Intent sendingDataBack = new Intent();
+//        sendingDataBack.putExtra("result", sumOfStrings);
+//        setResult(RESULT_OK, sendingDataBack);
     }
 }
