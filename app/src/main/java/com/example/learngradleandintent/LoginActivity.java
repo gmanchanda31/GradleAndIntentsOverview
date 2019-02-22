@@ -21,10 +21,7 @@ public class LoginActivity extends AppCompatActivity{
         WebView webView = findViewById(R.id.webview);
         webView.loadUrl("https://google.com");
 
-//        Button buttonSubmit = findViewById(R.id.btn_submit);
-//        buttonSubmit.setOnClickListener(this);
-//        Button buttonHello = findViewById(R.id.btn_hello);
-//        buttonHello.setOnClickListener(this);
+        Log.d(TAG, "onCreate: ");
 
         Toast.makeText(LoginActivity.this, "Hey, I am a toast!", Toast.LENGTH_LONG).show();
 
